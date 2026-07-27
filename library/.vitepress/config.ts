@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "ajtf-resources",
   title: "TAW-RL",
   description: "The 900th Tactical Air Wing Resources Library.",
   themeConfig: {
