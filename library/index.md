@@ -9,7 +9,7 @@ hero:
   actions:
    - theme: brand
      text: Go to Library
-     link: /home
+     link: /training
 
 # features:
 #   - title: Feature A
