@@ -9,12 +9,13 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Library', link: '/home' }
+      { text: 'Training', link: '/training/' },
+      { text: 'Regulations', link: '/regulations/' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Training Materials',
         items: [
           { text: 'CQB', link: '/training/cqb', items: [
             {
@@ -36,6 +37,33 @@ export default defineConfig({
               text: 'Verbal Signals', link: '/training/cqb/verbal-signals'
             },
           ] },
+        ]
+      },
+      {
+        text: 'Regulations & Procedure',
+        items: [
+          { text: 'Uniforms', link: '/regulations/uniforms', items: [
+            {
+              text: '44th Mechanized Infantry Battalion', items: [
+                {
+                  text: '150th Shock Company', link: '/tba'
+                },
+                {
+                  text: '320th Mechanized Infantry Company', link: '/tba'
+                }
+              ]
+            },
+            {
+              text: '900th Tactical Air Wing', items: [
+                {
+                  text: '6th Combat Support Squadron', link: '/tba'
+                },
+                {
+                  text: '200th Airborne Squadron', link: '/tba'
+                }
+              ]
+            }
+          ] }
         ]
       }
     ],
