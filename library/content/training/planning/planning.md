@@ -34,10 +34,8 @@ The rest can be adapted during the mission.
 
 ---
 
-## One Leader, Shared Understanding
+## Listen to Feedback
 
-Only one person needs to build the plan.
+Don't ignore points raised by those present.
 
-Everyone else needs to understand it.
-
-A short briefing that everyone remembers is better than a detailed briefing nobody remembers.
+Involved units could be warning you against failure.

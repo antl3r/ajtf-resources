@@ -26,7 +26,7 @@ What are we actually doing?
 Examples:
 
 - rescue hostage
-- destroy cache
+- destroy radar
 - capture building
 - gather intelligence
 
