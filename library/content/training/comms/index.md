@@ -12,11 +12,3 @@ The goal is to make sure everyone understands:
 - **what happens next**
 
 If everyone can consistently do those five things, your radios are good.
-
-## Contents
-
-- [[Calling Someone]]
-- [[Making Reports]]
-- [[Using the Right Net]]
-- [[Radio Discipline]]
-- [[Examples]]
