@@ -16,8 +16,8 @@
 - Commset III (olive dab green)  
 
 ### Clothing  
-- G3 Combat Shirt  
-- G3 Combat Pants  
+- A2CU (Varicam)
+- A2CU (Varicam)
 
 ### Gloves:  
 - Slingshot tactile  
@@ -34,3 +34,5 @@
 
 ### Belt:  
 - Task Force (varicam)
+
+![alt text](image-6.png)
