@@ -2,11 +2,11 @@
 
 ## Standing Beside the Helicopter
 
-❌ Wrong
+<font color="red">Wrong</font>
 
 Players stop immediately after exiting.
 
-✔ Correct
+<font color="green">Correct</font>
 
 Move away first.
 
@@ -14,11 +14,11 @@ Move away first.
 
 ## Everyone Uses One Door
 
-❌ Wrong
+<font color="red">Wrong</font>
 
 Entire squad crowds one side.
 
-✔ Correct
+<font color="green">Correct</font>
 
 Use multiple exits whenever possible.
 
@@ -26,11 +26,11 @@ Use multiple exits whenever possible.
 
 ## Nobody Covers
 
-❌ Wrong
+<font color="red">Wrong</font>
 
 Everyone watches the helicopter.
 
-✔ Correct
+<font color="green">Correct</font>
 
 Watch likely enemy avenues of approach.
 
@@ -38,11 +38,11 @@ Watch likely enemy avenues of approach.
 
 ## Running Before Everyone Is Off
 
-❌ Wrong
+<font color="red">Wrong</font>
 
 Half the squad has already left while others are still unloading.
 
-✔ Correct
+<font color="green">Correct</font>
 
 Establish the airhead first.
 
@@ -52,11 +52,11 @@ Then move together.
 
 ## Blocking the Aircraft
 
-❌ Wrong
+<font color="red">Wrong</font>
 
 Players stand in front of or behind the helicopter.
 
-✔ Correct
+<font color="green">Correct</font>
 
 Clear the landing zone immediately.
 
