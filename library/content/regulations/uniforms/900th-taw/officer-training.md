@@ -25,5 +25,4 @@
 - G3 Field Pants (varicam)  
 - G3 All Weather Combat Shirt (Ranger green)
 
-![alt text](image.png)
-![alt text](image-3.png)
+![alt text](image-10.png)

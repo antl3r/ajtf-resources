@@ -23,3 +23,5 @@ CAN USE GAS MASK IF YOU DO NOT LIKE THE MAXILLARY MASK; BUT REMOVE VISOR
 ### REFER TO PILOT UNIFORM
 (Switch helmet to ACH with SOF helmet cover)  
 (CAUGHT ON THERMAL Morale Patch)  
+
+![alt text](image-7.png)
