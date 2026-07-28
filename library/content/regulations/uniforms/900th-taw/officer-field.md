@@ -34,6 +34,5 @@ Morale Patch for officers is per squadron.
 Morale Patch for Command is "Shenanigans Coordinator".
 :::
 
-
-![alt text](image.png)
-![alt text](image-3.png)
+![alt text](image-2.png)
+![alt text](image-1.png)
