@@ -1,4 +1,94 @@
-import { defineConfig } from 'vitepress'
+import { DefaultTheme, defineConfig } from 'vitepress'
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
+
+const DOCS_ROOT = path.resolve(__dirname, "..");
+
+function titleFromMarkdown(file: string): string {
+    const source = fs.readFileSync(file, "utf8");
+
+    // Remove frontmatter first.
+    const { content } = matter(source);
+
+    const match = content.match(/^#\s+(.+)$/m);
+
+    if (match) {
+        return match[1].trim();
+    }
+
+    // Fallback to filename.
+    return path.basename(file, ".md");
+}
+
+function scanDirectory(
+    absoluteDir: string,
+    route: string,
+): DefaultTheme.SidebarItem[] {
+    const entries = fs
+        .readdirSync(absoluteDir, { withFileTypes: true })
+        .sort((a, b) => {
+            if (a.isDirectory() !== b.isDirectory()) {
+                return a.isDirectory() ? -1 : 1;
+            }
+
+            return a.name.localeCompare(b.name);
+        });
+
+    const items: DefaultTheme.SidebarItem[] = [];
+
+    for (const entry of entries) {
+        const absolute = path.join(absoluteDir, entry.name);
+
+        if (entry.isDirectory()) {
+            const index = path.join(absolute, "index.md");
+
+            const children = scanDirectory(
+                absolute,
+                `${route}/${entry.name}`,
+            );
+
+            items.push({
+                text: fs.existsSync(index)
+                    ? titleFromMarkdown(index)
+                    : entry.name,
+                link: fs.existsSync(index)
+                    ? `${route}/${entry.name}/`
+                    : undefined,
+                collapsed: false,
+                items: children,
+            });
+
+            continue;
+        }
+
+        if (!entry.name.endsWith(".md")) {
+            continue;
+        }
+
+        // index.md represents the section itself.
+        if (entry.name === "index.md") {
+            continue;
+        }
+
+        const slug = entry.name.slice(0, -3);
+
+        items.push({
+            text: titleFromMarkdown(absolute),
+            link: `${route}/${slug}`,
+        });
+    }
+
+    return items;
+}
+
+export function generateSidebar(
+    docsSubdirectory = "content",
+): DefaultTheme.SidebarItem[] {
+    const root = path.join(DOCS_ROOT, docsSubdirectory);
+
+    return scanDirectory(root, `/${docsSubdirectory}`);
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,64 +99,11 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Training', link: '/training/' },
-      { text: 'Regulations', link: '/regulations/' }
+      { text: 'Training', link: '/content/training/' },
+      { text: 'Regulations', link: '/content/regulations/' }
     ],
 
-    sidebar: [
-      {
-        text: 'Training Materials',
-        items: [
-          { text: 'CQB', link: '/training/cqb', items: [
-            {
-              text: 'CQB Principles', link: '/training/cqb/principles'
-            },
-            {
-              text: 'The Fatal Funnel', link: '/training/cqb/fatal-funnel'
-            },
-            {
-              text: 'Fields of Fire', link: '/training/cqb/fields-of-fire'
-            },
-            {
-              text: 'Slicing the Pie', link: '/training/cqb/slicing-the-pie'
-            },
-            {
-              text: 'Hallways', link: '/training/cqb/hallways'
-            },
-            {
-              text: 'Verbal Signals', link: '/training/cqb/verbal-signals'
-            },
-          ] },
-        ]
-      },
-      {
-        text: 'Regulations & Procedure',
-        items: [
-          { text: 'Uniforms', link: '/regulations/uniforms', items: [
-            {
-              text: '44th Mechanized Infantry Battalion', items: [
-                {
-                  text: '150th Shock Company', link: '/tba'
-                },
-                {
-                  text: '320th Mechanized Infantry Company', link: '/tba'
-                }
-              ]
-            },
-            {
-              text: '900th Tactical Air Wing', items: [
-                {
-                  text: '6th Combat Support Squadron', link: '/tba'
-                },
-                {
-                  text: '200th Airborne Squadron', link: '/tba'
-                }
-              ]
-            }
-          ] }
-        ]
-      }
-    ],
+    sidebar: generateSidebar(),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
