@@ -100,7 +100,8 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Training', link: '/content/training/' },
-      { text: 'Regulations', link: '/content/regulations/' }
+      { text: 'Regulations', link: '/content/regulations/' },
+      { text: 'Modules', link: '/content/modules/' }
     ],
 
     sidebar: generateSidebar(),
